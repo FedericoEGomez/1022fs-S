@@ -6,6 +6,7 @@ class ApiController {
     }
     async verListado (req, res){
         const equiposDeFutbol = await Team.find()
+        console.log(equiposDeFutbol)
         res.status(200).json(equiposDeFutbol)
     }
     async listadoPorCategoria (req, res){
@@ -24,8 +25,10 @@ class ApiController {
         try {
             const equipoGuardado = new Team(req.body)
             await equipoGuardado.save()
+            console.log(equipoGuardado)
             res.status(201).json(equipoGuardado)
         } catch (error) {
+            console.log(error)
             res.status(400).json(error)
         }
     }
