@@ -35,3 +35,8 @@ const guardarEquipoToken = async (body,token) =>{
 }
 //post put patch funcionan igual
 // params querys , body
+
+const pokemons = async () =>{
+    const {data} = await axios.get("https://pokeapi.co/api/v2/pokemon/ditto")
+    return data
+}
